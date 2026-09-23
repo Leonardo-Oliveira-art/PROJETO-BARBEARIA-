@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel — Agenda</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .painel-header{display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--linha)}
+  .painel-header a{font-family:-apple-system,sans-serif; font-size:.85rem}
+  main.painel{max-width:720px; margin:0 auto; padding:30px 20px 60px}
+  .dia-titulo{margin:28px 0 10px; font-size:1.05rem; color:var(--dourado)}
+  .item{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+    padding:12px 14px; border:1px solid var(--linha); border-radius:2px; margin-bottom:8px;
+    background:var(--fundo-alt); font-family:-apple-system,sans-serif; font-size:.9rem;
+  }
+  .item .info b{display:block; font-size:.95rem}
+  .item .acoes{display:flex; gap:6px}
+  .item button{
+    padding:6px 10px; border-radius:2px; border:1px solid var(--linha); background:transparent;
+    color:var(--texto); font-family:inherit; font-size:.8rem; cursor:pointer;
+  }
+  .item button.confirmar{border-color:var(--dourado); color:var(--dourado)}
+  .item button.cancelar{border-color:var(--vermelho); color:var(--vermelho)}
+  #login{max-width:320px; margin:80px auto; padding:0 20px; text-align:center}
+  #login input{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Painel da agenda</h2>
+  <input id="senhaInput" type="password" placeholder="Senha">
+  <button class="btn btn-principal" onclick="entrar()" style="width:100%">Entrar</button>
+  <p id="loginErro" class="msg" style="color:var(--vermelho)"></p>
+</div>
+
+<div id="painelConteudo" style="display:none">
+  <header class="painel-header">
+    <span class="nome-marca" id="nomeMarcaAdmin"></span>
+    <a href="index.html">Ver site</a>
+  </header>
+  <main class="painel">
+    <p class="muted">Agendamentos, do mais próximo pro mais distante.</p>
+    <div id="listaAgendamentos"></div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
