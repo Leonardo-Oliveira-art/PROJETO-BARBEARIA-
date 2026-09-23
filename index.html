@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbearia — Início</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="marca">
+    <img src="assets/logo.svg" alt="Logo" class="logo">
+    <span class="nome-marca" id="nomeMarca">Nome da Barbearia</span>
+  </div>
+  <nav class="menu">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#agendar" class="menu-cta">Agendar horário</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 id="heroTitulo">Nome da Barbearia</h1>
+  <p id="heroSlogan" class="slogan">Tradição e estilo desde sempre</p>
+  <a href="#agendar" class="btn btn-principal">Agendar horário</a>
+</section>
+
+<section id="sobre" class="secao">
+  <h2>Sobre</h2>
+  <p>
+    Um espaço pensado pra quem valoriza um bom corte e um atendimento de respeito.
+    Ambiente cuidado, profissionais experientes e horário marcado sem complicação —
+    você agenda pelo site e chega na hora certa.
+  </p>
+  <p class="muted">📍 <span id="enderecoTexto"></span> · 📞 <span id="telefoneTexto"></span></p>
+</section>
+
+<section id="servicos" class="secao alt">
+  <h2>Serviços</h2>
+  <div id="listaServicos" class="grade-servicos"></div>
+</section>
+
+<section id="agendar" class="secao">
+  <h2>Agendar horário</h2>
+  <p class="muted">Escolha o serviço, a data e um horário livre. Você recebe a confirmação por telefone.</p>
+
+  <div class="card-agendamento">
+    <label>Seu nome</label>
+    <input id="cliNome" placeholder="Nome completo">
+
+    <label>Telefone</label>
+    <input id="cliTelefone" placeholder="(11) 90000-0000">
+
+    <label>Serviço</label>
+    <select id="cliServico"></select>
+
+    <label>Data</label>
+    <input id="cliData" type="date">
+
+    <label>Horários livres</label>
+    <div id="cliSlots" class="slots"></div>
+
+    <button class="btn btn-principal" onclick="confirmarAgendamento()">Confirmar agendamento</button>
+    <p id="agendaMsg" class="msg"></p>
+  </div>
+
+  <div class="card-agendamento">
+    <h3>Já agendou? Veja o status</h3>
+    <label>Telefone usado no agendamento</label>
+    <input id="statusTelefone" placeholder="(11) 90000-0000">
+    <button class="btn btn-secundario" onclick="verStatus()">Ver meus agendamentos</button>
+    <div id="statusResultado"></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <p>© <span id="anoAtual"></span> <span class="nome-marca-footer"></span></p>
+  <a id="linkInstagram" href="#" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

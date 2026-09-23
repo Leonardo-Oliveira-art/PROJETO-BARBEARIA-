@@ -1,0 +1,90 @@
+/* Cores vêm do config.js e são aplicadas via JS em variáveis CSS abaixo.
+   Se preferir, também pode travar os valores direto aqui. */
+:root{
+  --fundo:#161412; --fundo-alt:#1f1c18; --texto:#f2e9d8;
+  --dourado:#c9a227; --vermelho:#8b2f2f; --linha:#3a352c;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--fundo); color:var(--texto);
+  font-family:'Georgia','Iowan Old Style',serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-weight:600; letter-spacing:.2px; margin:0 0 12px}
+p{line-height:1.6}
+.muted{opacity:.7; font-size:.92rem}
+a{color:var(--dourado)}
+
+.topo{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; border-bottom:1px solid var(--linha);
+  position:sticky; top:0; background:var(--fundo); z-index:10;
+}
+.marca{display:flex; align-items:center; gap:10px}
+.logo{width:38px; height:38px}
+.nome-marca{font-size:1.1rem; letter-spacing:.3px}
+.menu{display:flex; gap:20px; align-items:center; font-family:-apple-system,sans-serif; font-size:.9rem}
+.menu a{text-decoration:none; color:var(--texto); opacity:.8}
+.menu a:hover{opacity:1}
+.menu-cta{
+  background:var(--vermelho); color:#fff !important; opacity:1 !important;
+  padding:8px 14px; border-radius:2px;
+}
+
+.hero{
+  text-align:center; padding:90px 20px 70px; border-bottom:1px solid var(--linha);
+}
+.hero h1{font-size:2.4rem}
+.slogan{opacity:.75; margin-bottom:26px}
+
+.btn{
+  display:inline-block; padding:12px 22px; border-radius:2px; text-decoration:none;
+  font-family:-apple-system,sans-serif; font-weight:600; font-size:.95rem; border:none; cursor:pointer;
+}
+.btn-principal{background:var(--vermelho); color:#fff}
+.btn-secundario{background:transparent; color:var(--dourado); border:1px solid var(--dourado)}
+
+.secao{max-width:720px; margin:0 auto; padding:60px 24px}
+.secao.alt{max-width:100%; background:var(--fundo-alt); border-top:1px solid var(--linha); border-bottom:1px solid var(--linha)}
+.secao.alt > *{max-width:720px; margin-left:auto; margin-right:auto}
+
+.grade-servicos{display:grid; gap:14px; margin-top:20px}
+.servico-item{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:14px 0; border-bottom:1px solid var(--linha); font-family:-apple-system,sans-serif;
+}
+.servico-item .preco{color:var(--dourado); font-weight:600}
+
+.card-agendamento{
+  border:1px solid var(--linha); border-radius:2px; padding:20px; margin-top:24px;
+  background:var(--fundo-alt);
+}
+label{display:block; font-size:.8rem; opacity:.7; margin:14px 0 5px; font-family:-apple-system,sans-serif}
+label:first-child{margin-top:0}
+input,select{
+  width:100%; padding:10px 12px; border:1px solid var(--linha); border-radius:2px;
+  background:var(--fundo); color:var(--texto); font-family:-apple-system,sans-serif; font-size:.95rem;
+}
+.slots{display:grid; grid-template-columns:repeat(auto-fill,minmax(70px,1fr)); gap:8px; margin-top:6px}
+.slot{
+  padding:9px 4px; text-align:center; border:1px solid var(--linha); border-radius:2px;
+  font-family:-apple-system,sans-serif; font-size:.85rem; cursor:pointer; background:var(--fundo);
+}
+.slot.taken{opacity:.3; text-decoration:line-through; cursor:not-allowed}
+.slot.chosen{background:var(--dourado); color:#161412; border-color:var(--dourado)}
+.msg{font-family:-apple-system,sans-serif; font-size:.85rem; margin-top:10px}
+
+.status-box{
+  border:1px dashed var(--linha); padding:14px; margin-top:14px; text-align:center;
+  font-family:-apple-system,sans-serif;
+}
+.badge{font-size:.75rem; padding:3px 9px; border-radius:20px}
+.badge.pending{background:rgba(201,162,39,.2); color:var(--dourado)}
+.badge.confirmed{background:rgba(63,107,74,.3); color:#7fc297}
+
+.rodape{
+  text-align:center; padding:30px; border-top:1px solid var(--linha);
+  font-family:-apple-system,sans-serif; font-size:.85rem; opacity:.7;
+}
